@@ -4,7 +4,7 @@
     {
       "src": "eudemia/wsgi.py",
       "use": "@vercel/python",
-      "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
+      "config": { "maxLambdaSize": "15mb", "runtime": "python3.x" }
     },
     {
       "src": "build_files.sh",
@@ -15,10 +15,6 @@
     }
   ],
   "routes": [
-    {
-      "src": "/static/(.*)",
-      "dest": "/static/$1"
-    },
     {
       "src": "/(.*)",
       "dest": "eudemia/wsgi.py"
