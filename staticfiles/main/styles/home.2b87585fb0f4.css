@@ -1,0 +1,158 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.content li {
+    list-style: none;
+}
+
+.content section {
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.content h1 {
+    font-family: 'Roboto-Bold';
+    font-size: 4rem;
+    margin: 40px;
+}
+
+.content h2 {
+    font-family: 'Roboto-Bold';
+    font-size: 2.5rem;
+    margin: 40px;
+}
+
+.content h3 {
+    font-family: 'Roboto-Bold';
+    font-size: 1.5rem;
+}
+
+.content a {
+    margin: 30px;
+}
+
+.content p {
+    font-size: 1.3rem;
+    color: var(--dark-grey);
+    width: 70%;
+}
+
+.hero {
+    height: calc(100dvh - var(--topbar-height));
+    background-image: url("../images/background-white.ba82bd49ae70.png");
+    /* background-image: linear-gradient(to bottom right, #fff, var(--light-blue)); */
+    /* border-bottom: 10px solid; */
+    /* border-image: linear-gradient(to left, var(--accent1), var(--accent2)) 1; */
+}
+
+.hero h1 {
+    color: black;
+}
+
+.info-cards {
+    display: flex;
+    flex-wrap: wrap;
+
+    width: 100%;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+
+.info-card {
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    /* background: linear-gradient(#fff, #fff) padding-box, linear-gradient(to bottom, var(--accent1), var(--accent2)) border-box; */
+    /* border: 6px solid transparent; */
+    border-radius: 15px;
+    background-color: var(--light-blue);
+
+    width: max(300px, 25%);
+    margin: 25px;
+    overflow: hidden;
+    padding: 2rem;
+}
+
+.info-card h3 {
+    margin-bottom: 20px;
+}
+
+.info-card-content {
+    width: 90%
+}
+
+.card-img img {
+    height: 27px;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.call-to-action {
+    /* border-top: 10px solid; */
+    /* border-image: linear-gradient(to left, var(--accent1), var(--accent2)) 1; */
+    /* background-image: linear-gradient(to right, var(--accent1), var(--accent2)); */
+    background-image: linear-gradient(to right, var(--accent1), var(--accent2));
+    color: #fff;
+}
+
+.call-to-action h2 {
+    color: #fff;
+}
+
+.call-to-action p {
+    color: #fff;
+    margin-bottom: 20px;
+    width: 50%;
+}
+
+@media screen and (max-width: 768px) {
+    .content h1 {
+        font-family: 'Roboto-Bold';
+        font-size: 3rem;
+        margin: 20px;
+    }
+
+    .content h2 {
+        font-family: 'Roboto-Bold';
+        font-size: 2rem;
+        margin: 40px;
+    }
+
+    .content h3 {
+        font-family: 'Roboto-Bold';
+        font-size: 1.5rem;
+    }
+
+    .content a {
+        margin: 30px;
+    }
+
+    .content p {
+        font-size: 1rem;
+        width: 100%;
+    }
+
+    .info-card {
+        /* background: linear-gradient(#fff, #fff) padding-box, linear-gradient(to bottom, var(--accent1), var(--accent2)) border-box; */
+        /* border: 6px solid transparent; */
+        border-radius: 15px;
+        background-color: var(--light-blue);
+
+        width: 90%;
+        margin: 25px;
+        overflow: hidden;
+        padding: 2rem;
+    }
+}

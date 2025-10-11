@@ -1,0 +1,749 @@
+.topbar {
+    border: none;
+    z-index: 8;
+}
+
+.content {
+    margin-left: var(--sidebar-width);
+    padding: min(5%, 40px);
+}
+
+.sidebar {
+    position: fixed;
+    width: var(--sidebar-width);
+    padding-top: 15px;
+    height: calc(100vh - var(--topbar-height));
+    background-color: #fff;
+    border-right: 1px solid var(--light-grey);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    z-index: 8;
+}
+
+.sidebar a {
+    text-align: left;
+    text-decoration: none;
+    color: var(--dark-grey);
+    padding: 10px 15px;
+    width: 85%;
+    margin: 15px 0;
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-settings {
+    margin-top: auto !important;
+    margin-bottom: 2em !important;
+    color: var(--accent2) !important;
+}
+
+.sidebar-settings img, svg {
+    filter: var(--accent2-filter);
+}
+
+.sidebar a {
+    transition: background-color 180ms ease;
+}
+
+.sidebar a:hover {
+    background-color: var(--light-blue);
+}
+
+.sidebar img, .sidebar svg {
+    height: 1rem;
+    margin-right: 10px;
+}
+
+.selected {
+    background: var(--gradient-bottom-right);
+    color: #fff !important;
+}
+
+.selected img, .selected svg {
+    filter: invert(1);
+}
+
+.navbar > * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 !important;
+    margin: 0 15px;
+}
+
+.leaderboard img {
+    height: 21px;
+}
+
+.shop-icon img {
+    height: 21px;
+    filter: invert(1);
+}
+
+.notif img {
+    height: 27px;
+}
+
+.profile-pic {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50% !important;
+    border: none;
+    background-color: #fff;
+    overflow: hidden;
+    /* border: 2px solid #000; */
+}
+
+.profile-border {
+    position: fixed;
+    width: 84px;
+    height: 84px;
+    border: none;
+}
+
+/***** Profile Popup *****/
+label img {
+    height: 100%;
+}
+
+#popup-toggle {
+    display: none;
+}
+
+.popup-user-info {
+    text-align: center !important;
+}
+
+.popup-username {
+    font-size: 0.8rem;
+    color: var(--grey);
+}
+
+.profile-popup {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+
+    position: fixed;
+    background-color: #fff;
+    top: calc(var(--topbar-height) - 10px);
+    right: 64px;
+    border-radius: 5px;
+    border: 1px solid var(--light-grey);
+    padding: 16px 0 !important;
+    z-index: 10;
+}
+
+.profile-popup > * {
+    color: var(--text);
+    text-decoration: none;
+    width: 100%;
+    padding: 0.5em 1.5em;
+    text-align: left;
+}
+
+.profile-popup a:hover {
+    color: var(--accent2);
+    background-color: var(--light-blue);
+}
+
+#popup-toggle:checked ~ .profile-popup {
+    display: flex;
+}
+
+#popup-overlay {
+    display: none;
+}
+
+#popup-toggle:checked ~ #popup-overlay {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9;
+}
+
+/***** DEFAULTS *****/
+.content > .header {
+    font-family: var(--font-bold);
+}
+
+.content > h1 {
+    font-family: var(--font-bold);
+    font-size: 1.75rem;
+}
+
+.content > h2 {
+    font-size: 1.2rem;
+    color: var(--grey);
+}
+
+.content > p {
+    color: var(--grey)
+}
+
+.content > div {
+    margin-top: 24px;
+}
+
+.content > div > div h3 {
+    font-family: var(--font);
+    margin-bottom: 10px;
+}
+
+.content > div > div h2 {
+    font-family: var(--font-bold);
+    font-size: 2.2rem;
+}
+
+.content > div > div, .content > div > a {
+    padding: 20px;
+    /* border: 1px solid var(--light-grey); */
+    display: block;
+    text-decoration: none;
+    color: #000;
+    /* box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1); */
+    background-color: #fff;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease;
+}
+
+.content > div > div:hover, .content > div > a:hover {
+    box-shadow: 10px 10px 16px 4px rgba(0, 0, 0, 0.05), -8px -8px 16px #fff;
+    /* box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.05); */
+}
+
+/*******************/
+/***** STUDENT *****/
+/*******************/
+
+/***** DASHBOARD *****/
+.dashboard-content {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(auto-fill, minmax(min(100px,100%), 1fr));
+    gap: 40px;
+    grid-auto-flow: row;
+}
+
+.dashboard-content p {
+    color: var(--text);
+    margin: 0.5em 0;
+}
+
+.points-dashboard {
+    grid-column: span 1;
+    background-color: #fff;
+}
+
+.health-dashboard {
+    grid-column: 5 / span 2;
+    grid-row: 2 / span 1;
+}
+
+.progress-dashboard {
+    grid-column: span 3;
+}
+
+.level-progress-bar {
+    height: 10px;
+    width: 100%;
+    margin-top: 1.25em;
+    background-color: var(--light-grey);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.level-progress-bar::after {
+    display: block;
+    content: "";
+    height: 100%;
+    width: 0%;
+    border-radius: 10px;
+    background: var(--gradient-right);
+    /* background: var(--accent1); */
+}
+
+.attendance-dashboard {
+    grid-column: span 2;
+}
+
+.challenges-dashboard {
+    grid-column: span 4;
+    grid-row: span 3;
+}
+
+.quotes-dashboard {
+    grid-row: 3 / span 1;
+    grid-column: 5 / span 2;
+}
+
+.leaderboard-dashboard {
+    grid-column: span 4;
+    grid-row: span 2;
+}
+
+.quote {
+    font-style: italic;
+    color: var(--grey);
+}
+
+.quote-by {
+    text-align: right;
+}
+
+/***** CHALLENGES *****/
+.challenges-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(auto-fill, minmax(min(100px,100%), 1fr));
+    gap: 40px;
+}
+
+.todays-challenges {
+    grid-column: span 3;
+}
+
+.challenge {
+    display: block;
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid var(--light-grey);
+    border-radius: 8px;
+    text-decoration: none;
+    background-color: #fff;
+}
+
+.challenge:hover {
+    background-color: var(--background);
+}
+
+.challenge * {
+    text-decoration: none;
+    color: var(--text);
+}
+
+.challenge h4 {
+    font-family: var(--font);
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.challenge-type {
+    display: inline-block;
+    padding: 0.25em 1em;
+    border-radius: 100px;
+    margin-top: 1em;
+    background-color: var(--light-grey);
+}
+
+.challenge-progress {
+    height: 10px;
+    width: 100%;
+    background-color: var(--light-grey);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.correct-incorrect {
+    display: inline-block;
+    background-color: var(--light-blue);
+    padding: 0.5em 1em;
+    margin: 0.5em 0;
+    border-radius: 5px;
+}
+
+.challenge-progress::after {
+    display: block;
+    content: "";
+    height: 100%;
+    width: 1%;
+    border-radius: 10px;
+    background-color: var(--accent1);
+}
+
+.challenge-completed {
+    font-size: 0.9rem;
+    color: var(--grey);
+}
+
+.challenge-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 50dvh;
+}
+
+.challenge-container h1 {
+    margin-bottom: 1em;
+}
+
+.challenge-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.challenge-answer {
+    border: 1px solid var(--light-grey);
+    padding: 1em 2em;
+    border-radius: 8px;
+}
+
+.question-submit-button {
+    padding: 0.5em 2em;
+    border: none;
+    border-radius: 100px;
+    background-color: var(--accent1);
+    color: #fff;
+    cursor: pointer;
+    margin-top: 1em;
+}
+
+.challenge-edit-buttons {
+    margin-top: 1em !important;
+    text-align: right;
+}
+
+.create-challenge {
+    display: inline-flex;
+    color: #000;
+    align-items: center;
+    width: auto;
+}
+
+.create-challenge .icon {
+    height: 1rem;
+    margin-left: 1rem;
+    filter: invert(1);
+}
+
+.create-challenge:hover .icon {
+    filter: var(--accent1-filter);
+}
+/***** HEALTH *****/
+.health-content {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(auto-fill, minmax(min(100px,100%), 1fr));
+    gap: 40px;
+    grid-auto-flow: row;
+}
+
+.weight-health {
+    grid-row : 2 / span 1;
+}
+
+.bmi-health {
+    grid-row: span 2;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.bmi-health-img {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 12px;
+}
+
+.bmi-health img {
+    height: 150px;
+}
+
+.blood-group-health {
+    grid-row: 3 / span 1;
+    grid-column: span 2;
+}
+
+/***** Health Editor *****/
+.content:has(.health-edit-form) {
+    height: 50dvh;
+}
+
+.content:has(.health-edit-form), .health-edit-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.edit-form p {
+    display: flex;
+    flex-direction: row;
+    height: 4rem;
+    align-items: center;
+}
+
+.edit-form .form-control {
+    border: 1px solid var(--light-grey);
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    margin: 0.5em 0;
+}
+
+.edit-form .save-button {
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 100px;
+    background-color: var(--accent1);
+    color: #fff;
+    cursor: pointer;
+    margin-top: 0.5em;
+}
+
+.edit-form label {
+    margin-right: 1rem;
+}
+
+/***** QUIZZES *****/
+.quizzes-content {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px,100%), 1fr));
+}
+
+.quiz:hover {
+    background-color: var(--background);
+}
+
+.quiz p {
+    color: var(--grey);
+    font-size: 0.85rem;
+}
+
+/***** SETTINGS *****/
+.settings-container {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid var(--light-grey);
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.settings-container a {
+    display: block;
+    color: var(--text);
+    padding: 1em 1.5em;
+    text-decoration: none;
+    border: none !important;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.settings-container a:hover {
+    background: var(--light-blue);
+}
+
+
+.edit-button {
+    display: inline-block !important;
+    /* grid-column: 1 / 2; */
+    margin: 20px;
+    padding: 0.5em 2em !important;
+    width: auto;
+    background-color: var(--light-blue) !important;
+    border-radius: 100px !important;
+}
+
+.edit-button:hover {
+    background: var(--accent1) !important;
+    color: #fff !important;
+}
+
+.save-button {
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 100px;
+    background: var(--gradient-bottom-right);
+    color: #fff;
+    cursor: pointer;
+    margin-top: 0.5em;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.05s ease;
+}
+
+.save-button:hover {
+    background: #fff !important;
+    color: var(--accent1);
+}
+
+.danger-button {
+    background: var(--red);
+}
+
+.danger-button:hover {
+    background-color: #fff !important;
+    color: var(--red);
+}
+
+.challenge-delete-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+    height: 50dvh;
+}
+
+p:has(#id_question) {
+    height: 20em;
+}
+
+.shop-purchase-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50dvh;
+}
+
+.border-change-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 50dvh;
+}
+
+.border-change-form label {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+    padding: 1em;
+    border-radius: 8px;
+}
+
+.border-change-form label:hover {
+    background-color: var(--light-grey);
+}
+
+.border-change-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.border-change-container > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.border-change-container input[type="radio"] {
+    display: none;
+}
+
+.border-change-container input[type="radio"]:checked + label {
+    background-color: var(--light-blue);
+}
+
+.attendance-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 50dvh;
+}
+
+.attendance-form input {
+    accent-color: var(--accent1);
+}
+
+.alert {
+    width: 100%;
+    color: var(--red);
+    text-align: center;
+    z-index: 100;
+}
+
+.danger {
+    color: var(--red) !important;
+}
+
+#sidebar-overlay {
+    background: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    inset: 0;
+    z-index: 7;
+    display: none;
+}
+
+#open-sidebar-button {
+    background-color: transparent;
+    border: none;
+    display: none;
+}
+
+#open-sidebar-button img {
+    filter: invert(1);
+    height: 21px;
+}
+
+@media screen and (max-width: 1000px) {
+    * {
+        font-size: 0.95rem;
+    }
+
+    #open-sidebar-button {
+        display: block;
+    }
+
+    .logo-container {
+        display: none;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+
+    .sidebar {
+        left: -100%;
+        transition: left 0.3s ease;
+    }
+
+    .sidebar.show {
+        left: 0;
+    }
+    
+    .sidebar.show ~ #sidebar-overlay {
+        display: block;
+    }
+
+    .dashboard-content, .health-content {
+        display: flex !important;
+        flex-direction: column;
+    }
+
+    .challenge-edit-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .health-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

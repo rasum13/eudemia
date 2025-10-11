@@ -1,0 +1,58 @@
+.leaderboard-container {
+    grid-row: 2 / last;
+    grid-column: 1 / last;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+
+    width: 100%;
+    margin-top: 50px;
+    border: none !important;
+}
+
+.leaderboard-entry {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #fff;
+
+    font-size: 1.2rem;
+    margin: 4px;
+    padding: 12px !important;
+    border-radius: 8px;
+}
+
+.leaderboard-entry > div {
+    gap: 0.5em;
+}
+
+.leaderboard-entry .rank {
+    text-align: right;
+    width: 3%;
+    margin-right: 2rem;
+    background-color: var(--accent1);
+    color: #fff;
+    text-align: center;
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
+    font-size: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.leaderboard-entry > .name {
+    width: 50%;
+    text-align: left;
+    border-right: none;
+}
+
+.leaderboard-entry > .points {
+    flex-grow: 1;
+    text-align: right;
+    font-family: 'Roboto-Bold', sans-serif;
+}
+
