@@ -19,3 +19,5 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", f"eudemia.settings.{ENVIRONMENT}
 application = get_wsgi_application()
 
 application = WhiteNoise(application, root="staticfiles")
+
+app = application
